@@ -1,4 +1,4 @@
-package ren.oliver.bos.dao;
+package ren.oliver.bos.dao.impl;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -8,6 +8,8 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+
+import ren.oliver.bos.dao.BaseDao;
 
 public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
 	

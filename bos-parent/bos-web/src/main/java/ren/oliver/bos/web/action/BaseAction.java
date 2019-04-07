@@ -4,8 +4,9 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 
-public class BaseAction<T> extends ActionSupport {
+public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 
 	private static final long serialVersionUID = -5593155892446592382L;
 	
