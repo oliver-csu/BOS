@@ -5,4 +5,11 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>bos-parent</name>
+  <modules>
+  	<module>bos-domain</module>
+  	<module>bos-utils</module>
+  	<module>bos-dao</module>
+  	<module>bos-service</module>
+  	<module>bos-web</module>
+  </modules>
 </project>
