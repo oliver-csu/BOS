@@ -8,4 +8,11 @@
   <artifactId>bos-web</artifactId>
   <packaging>war</packaging>
   <name>bos-web</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>ren.oliver</groupId>
+  		<artifactId>bos-service</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>

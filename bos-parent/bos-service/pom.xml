@@ -7,4 +7,11 @@
   </parent>
   <artifactId>bos-service</artifactId>
   <name>bos-service</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>ren.oliver</groupId>
+  		<artifactId>bos-dao</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>

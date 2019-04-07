@@ -7,4 +7,11 @@
   </parent>
   <artifactId>bos-utils</artifactId>
   <name>bos-utils</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>ren.oliver</groupId>
+  		<artifactId>bos-domain</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
