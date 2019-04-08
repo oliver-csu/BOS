@@ -12,16 +12,17 @@
         <script type="text/javascript" src="${pageContext.request.contextPath }/js/easyui/locale/easyui-lang-zh_CN.js" />
         <script type="text/javascript">
             $(function(){
-                //alert方法---提示框
+                // alert方法---提示框
                 //$.messager.alert("标题","内容","question");
 
-                //confirm方法---确认框
-                /**
-                 $.messager.confirm("提示信息","你确定要删除当前记录吗？",function(r){
-			    alert(r);
-             **/
+                // confirm方法---确认框
+                /*
+                $.messager.confirm("提示信息","你确定要删除当前记录吗？",function(r){
+			        alert(r);
+		        });
+                */
 
-                //show方法---欢迎框
+                // show方法---欢迎框
                 $.messager.show({
                     title:'欢迎信息',
                     msg:'欢迎【admin】登录系统！',
