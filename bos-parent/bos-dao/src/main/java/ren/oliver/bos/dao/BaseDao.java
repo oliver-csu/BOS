@@ -13,6 +13,7 @@ public interface BaseDao<T> {
 	
 	T findById(Serializable id);
 	
-	public List<T> findAll();
-	
+	List<T> findAll();
+
+	void executeUpdate(String queryName,Object...objects);
 }
