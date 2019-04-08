@@ -11,6 +11,7 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 	private static final long serialVersionUID = -5593155892446592382L;
 	
 	public static final String HOME = "home";
+	public static final String LIST = "list";
 
 	protected T model;
 	

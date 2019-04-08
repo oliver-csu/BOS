@@ -1,8 +1,9 @@
 package ren.oliver.bos.domain;
 
 import java.util.Date;
+import java.io.Serializable;
 
-public class User implements java.io.Serializable {
+public class User implements Serializable {
 
 	private static final long serialVersionUID = 2350554122343089657L;
 	

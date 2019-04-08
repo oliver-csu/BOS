@@ -3,12 +3,14 @@ package ren.oliver.bos.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ren.oliver.bos.dao.UserDao;
 import ren.oliver.bos.domain.User;
 import ren.oliver.bos.service.UserService;
 import ren.oliver.bos.utils.MD5Utils;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService{
 	
 	@Autowired
