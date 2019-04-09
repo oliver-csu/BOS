@@ -49,6 +49,12 @@ public class StaffAction extends BaseAction<Staff> {
         return NONE;
     }
 
+    public String deleteBatch(){
+
+        staffService.deleteBatch(ids);
+        return LIST;
+    }
+
     public int getPage() {
 
         return page;

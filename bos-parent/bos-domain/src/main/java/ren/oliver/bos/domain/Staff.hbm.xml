@@ -38,4 +38,7 @@
             <one-to-many class="ren.oliver.bos.domain.DecidedZone" />
         </set>
     </class>
+    <query name="staff.delete">
+        UPDATE Staff SET deltag = '1' WHERE id = ?
+    </query>
 </hibernate-mapping>

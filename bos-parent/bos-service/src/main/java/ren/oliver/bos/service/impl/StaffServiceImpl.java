@@ -1,5 +1,6 @@
 package ren.oliver.bos.service.impl;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,5 +26,16 @@ public class StaffServiceImpl implements StaffService {
     public void pageQuery(PageBean pageBean) {
 
         staffDao.pageQuery(pageBean);
+    }
+
+    @Override
+    public void deleteBatch(String ids) {
+
+        if (StringUtils.isNotBlank(ids)) {
+            String[] staffIds = ids.split(",");
+            for (String id : staffIds) {
+                staffDao.executeUpdate("staff.delete", id);
+            }
+        }
     }
 }
