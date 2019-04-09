@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ren.oliver.bos.dao.StaffDao;
 import ren.oliver.bos.domain.Staff;
 import ren.oliver.bos.service.StaffService;
+import ren.oliver.bos.utils.PageBean;
 
 @Service
 @Transactional
@@ -18,5 +19,11 @@ public class StaffServiceImpl implements StaffService {
     public void save(Staff staff) {
 
         staffDao.save(staff);
+    }
+
+    @Override
+    public void pageQuery(PageBean pageBean) {
+
+        staffDao.pageQuery(pageBean);
     }
 }

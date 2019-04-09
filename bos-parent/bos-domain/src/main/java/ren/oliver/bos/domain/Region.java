@@ -13,7 +13,7 @@ public class Region implements Serializable {
     private String postcode;
     private String shortcode;
     private String citycode;
-    private Set subareas = new HashSet(0);
+    private Set subAreas = new HashSet(0);
 
     public Region() {
 
@@ -25,7 +25,7 @@ public class Region implements Serializable {
     }
 
     public Region(String id, String province, String city, String district,
-                  String postcode, String shortcode, String citycode, Set subareas) {
+                  String postcode, String shortcode, String citycode, Set subAreas) {
 
         this.id = id;
         this.province = province;
@@ -34,7 +34,7 @@ public class Region implements Serializable {
         this.postcode = postcode;
         this.shortcode = shortcode;
         this.citycode = citycode;
-        this.subareas = subareas;
+        this.subAreas = subAreas;
     }
 
     public String getId() {
@@ -107,13 +107,13 @@ public class Region implements Serializable {
         this.citycode = citycode;
     }
 
-    public Set getSubareas() {
+    public Set getSubAreas() {
 
-        return this.subareas;
+        return this.subAreas;
     }
 
-    public void setSubareas(Set subareas) {
+    public void setSubAreas(Set subAreas) {
 
-        this.subareas = subareas;
+        this.subAreas = subAreas;
     }
 }

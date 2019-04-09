@@ -16,7 +16,7 @@
             <column name="name" length="30" />
         </property>
 
-        <set name="subareas" inverse="true">
+        <set name="subAreas" inverse="true">
             <key>
                 <column name="decidedzone_id" length="32" />
             </key>

@@ -31,8 +31,7 @@
         <property name="standard" type="java.lang.String">
             <column name="standard" length="100" />
         </property>
-
-        <set name="decidedzones" inverse="true">
+        <set name="decidedZones" inverse="true">
             <key>
                 <column name="staff_id" length="32" />
             </key>

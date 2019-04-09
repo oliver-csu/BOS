@@ -13,7 +13,7 @@ public class Staff implements Serializable {
     private String deltag = "0";
     private String station;
     private String standard;
-    private Set decidedzones = new HashSet(0);
+    private Set decidedZones = new HashSet(0);
 
     public Staff() {
 
@@ -25,7 +25,7 @@ public class Staff implements Serializable {
     }
 
     public Staff(String id, String name, String telephone, String haspda,
-                 String deltag, String station, String standard, Set decidedzones) {
+                 String deltag, String station, String standard, Set decidedZones) {
 
         this.id = id;
         this.name = name;
@@ -34,7 +34,7 @@ public class Staff implements Serializable {
         this.deltag = deltag;
         this.station = station;
         this.standard = standard;
-        this.decidedzones = decidedzones;
+        this.decidedZones = decidedZones;
     }
 
     public String getId() {
@@ -107,13 +107,13 @@ public class Staff implements Serializable {
         this.standard = standard;
     }
 
-    public Set getDecidedzones() {
+    public Set getDecidedZones() {
 
-        return this.decidedzones;
+        return this.decidedZones;
     }
 
-    public void setDecidedzones(Set decidedzones) {
+    public void setDecidedZones(Set decidedZones) {
 
-        this.decidedzones = decidedzones;
+        this.decidedZones = decidedZones;
     }
 }

@@ -6,12 +6,10 @@ import java.util.Set;
 
 public class DecidedZone implements Serializable {
 
-    // Fields
-
     private String id;
     private Staff staff;
     private String name;
-    private Set subareas = new HashSet(0);
+    private Set subAreas = new HashSet(0);
 
     public DecidedZone() {
 
@@ -22,12 +20,12 @@ public class DecidedZone implements Serializable {
         this.id = id;
     }
 
-    public DecidedZone(String id, Staff staff, String name, Set subareas) {
+    public DecidedZone(String id, Staff staff, String name, Set subAreas) {
 
         this.id = id;
         this.staff = staff;
         this.name = name;
-        this.subareas = subareas;
+        this.subAreas = subAreas;
     }
 
     public String getId() {
@@ -60,13 +58,13 @@ public class DecidedZone implements Serializable {
         this.name = name;
     }
 
-    public Set getSubareas() {
+    public Set getSubAreas() {
 
-        return this.subareas;
+        return this.subAreas;
     }
 
-    public void setSubareas(Set subareas) {
+    public void setSubAreas(Set subAreas) {
 
-        this.subareas = subareas;
+        this.subAreas = subAreas;
     }
 }
