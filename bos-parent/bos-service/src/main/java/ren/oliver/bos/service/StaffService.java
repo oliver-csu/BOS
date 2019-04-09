@@ -10,4 +10,6 @@ public interface StaffService {
     void pageQuery(PageBean pageBean);
 
     void deleteBatch(String ids);
+
+    void update(Staff model);
 }

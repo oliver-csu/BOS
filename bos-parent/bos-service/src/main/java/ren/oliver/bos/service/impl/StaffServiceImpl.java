@@ -38,4 +38,15 @@ public class StaffServiceImpl implements StaffService {
             }
         }
     }
+
+    public void update(Staff model) {
+
+        Staff staff = staffDao.findById(model.getId());
+        staff.setName(model.getName());
+        staff.setTelephone(model.getTelephone());
+        staff.setHaspda(model.getHaspda());
+        staff.setStandard(model.getStandard());
+        staff.setStation(model.getStation());
+        staffDao.update(staff);
+    }
 }

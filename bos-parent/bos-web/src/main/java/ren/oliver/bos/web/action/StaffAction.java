@@ -49,6 +49,12 @@ public class StaffAction extends BaseAction<Staff> {
         return NONE;
     }
 
+    public String edit() {
+
+        staffService.update(model);
+        return LIST;
+    }
+
     public String deleteBatch(){
 
         staffService.deleteBatch(ids);
