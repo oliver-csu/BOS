@@ -1,5 +1,6 @@
 package ren.oliver.bos.web.action;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import ren.oliver.bos.domain.Region;
 import ren.oliver.bos.service.RegionService;
+import ren.oliver.bos.utils.PinYin4jUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,8 +48,14 @@ public class RegionAction extends BaseAction<Region> {
             String city = row.getCell(2).getStringCellValue();
             String district = row.getCell(3).getStringCellValue();
             String postcode = row.getCell(4).getStringCellValue();
-            Region region = new Region(id, province, city, district, postcode, null, null, null);
-
+            province = province.substring(0, province.length() - 1);
+            city = city.substring(0, city.length() - 1);
+            district = district.substring(0, district.length() - 1);
+            String info = province + city + district;
+            String[] headByString = PinYin4jUtils.getHeadByString(info);
+            String shortcode = StringUtils.join(headByString);
+            String citycode = PinYin4jUtils.hanziToPinyin(city, "");
+            Region region = new Region(id, province, city, district, postcode, shortcode, citycode, null);
             regionList.add(region);
         }
         regionService.saveBatch(regionList);
