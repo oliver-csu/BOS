@@ -111,7 +111,7 @@
                 pageList: [30,50,100],
                 pagination : true,
                 toolbar : toolbar,
-                url : "regionAction_pageQuery.action",
+                url : "${pageContext.request.contextPath }/json/region.json",
                 idField : 'id',
                 columns : columns,
                 onDblClickRow : doDblClickRow
