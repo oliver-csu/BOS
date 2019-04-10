@@ -1,0 +1,67 @@
+package ren.oliver.bos.web.action;
+
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+import ren.oliver.bos.domain.Region;
+import ren.oliver.bos.service.RegionService;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+@Controller
+@Scope("prototype")
+public class RegionAction extends BaseAction<Region> {
+
+    private File regionFile;
+
+    @Autowired
+    RegionService regionService;
+
+    public String importXls() throws IOException {
+
+        List<Region> regionList = new ArrayList<Region>();
+
+        HSSFWorkbook hssfWorkbook = new HSSFWorkbook(new FileInputStream(regionFile));
+
+        HSSFSheet hssfSheet = hssfWorkbook.getSheet("Sheet1");
+
+        for (Row row : hssfSheet) {
+
+            int rowNum =  row.getRowNum();
+
+            if (rowNum == 0) {
+
+                continue;
+            }
+
+            String id = row.getCell(0).getStringCellValue();
+            String province = row.getCell(1).getStringCellValue();
+            String city = row.getCell(2).getStringCellValue();
+            String district = row.getCell(3).getStringCellValue();
+            String postcode = row.getCell(4).getStringCellValue();
+            Region region = new Region(id, province, city, district, postcode, null, null, null);
+
+            regionList.add(region);
+        }
+        regionService.saveBatch(regionList);
+
+        return NONE;
+    }
+
+    public void setRegionFile(File regionFile) {
+
+        this.regionFile = regionFile;
+    }
+
+    public File getRegionFile() {
+
+        return this.regionFile;
+    }
+}

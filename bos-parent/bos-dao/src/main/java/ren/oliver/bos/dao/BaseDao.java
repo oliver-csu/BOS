@@ -12,6 +12,8 @@ public interface BaseDao<T> {
 	void delete(T entity);
 	
 	void update(T entity);
+
+	void saveOrUpdate(T entity);
 	
 	T findById(Serializable id);
 	
