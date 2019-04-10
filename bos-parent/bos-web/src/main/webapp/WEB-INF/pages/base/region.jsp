@@ -115,6 +115,12 @@
 			columns : columns,
 			onDblClickRow : doDblClickRow
 		});
+
+        //页面加载完成后，调用OCUpload插件的方法
+        $("#button-import").upload({
+            action:'regionAction_importXls.action',
+            name:'regionFile'
+        });
 		
 		// 添加、修改区域窗口
 		$('#addRegionWindow').window({
