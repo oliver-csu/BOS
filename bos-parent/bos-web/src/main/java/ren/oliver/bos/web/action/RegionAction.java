@@ -20,6 +20,8 @@ import java.util.List;
 @Controller
 @Scope("prototype")
 public class RegionAction extends BaseAction<Region> {
+
+    private String q;
     private File regionFile;
 
     @Autowired
@@ -74,8 +76,31 @@ public class RegionAction extends BaseAction<Region> {
         this.regionFile = regionFile;
     }
 
+    public String listajax() {
+
+        List<Region> regionList = null;
+        if (StringUtils.isNotBlank(q)) {
+            regionList = regionService.findListByQ(q);
+        } else {
+            regionList = regionService.findAll();
+        }
+        java2Json(regionList, new String[]{"subareas"});
+
+        return NONE;
+    }
+
     public File getRegionFile() {
 
         return this.regionFile;
+    }
+
+    public String getQ() {
+
+        return q;
+    }
+
+    public void setQ(String q) {
+
+        this.q = q;
     }
 }
