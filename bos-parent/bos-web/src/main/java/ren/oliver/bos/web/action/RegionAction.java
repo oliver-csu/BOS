@@ -67,7 +67,7 @@ public class RegionAction extends BaseAction<Region> {
     public String pageQuery() {
 
         regionService.pageQuery(pageBean);
-        java2Json(pageBean, new String[]{"currentPage","detachedCriteria","pageSize","subareas"});
+        java2Json(pageBean, new String[]{"currentPage","detachedCriteria","pageSize","subAreas"});
         return NONE;
     }
 
@@ -84,7 +84,7 @@ public class RegionAction extends BaseAction<Region> {
         } else {
             regionList = regionService.findAll();
         }
-        java2Json(regionList, new String[]{"subareas"});
+        java2Json(regionList, new String[]{"subAreas"});
 
         return NONE;
     }
