@@ -222,7 +222,7 @@
 	</div>
 
 	<div style="overflow:auto;padding:5px;" border="false">
-		<form id="addSubareaForm" method="post" action="subareaAction_add.action">
+		<form id="addSubareaForm" method="post" action="subAreaAction_add.action">
 			<table class="table-edit" width="80%" align="center">
 				<tr class="title">
 					<td colspan="2">分区信息</td>
