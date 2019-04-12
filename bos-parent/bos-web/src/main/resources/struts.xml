@@ -45,5 +45,9 @@
         <action name="subAreaAction_*" class="subAreaAction" method="{1}">
             <result name="list">/WEB-INF/pages/base/subarea.jsp</result>
         </action>
+
+        <action name="decidedZoneAction_*" class="decidedZoneAction" method="{1}">
+
+        </action>
 	</package>
 </struts>

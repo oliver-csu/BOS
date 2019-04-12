@@ -125,7 +125,7 @@
                 pageList: [30,50,100],
                 pagination : true,
                 toolbar : toolbar,
-                url : "decidedzoneAction_pageQuery.action",
+                url : "decidedZoneAction_pageQuery.action",
                 idField : 'id',
                 columns : columns,
                 onDblClickRow : doDblClickRow
