@@ -12,7 +12,7 @@
             <column name="decidedzone_id" length="32" />
         </many-to-one>
 
-        <many-to-one name="region" class="ren.oliver.bos.domain.Region" fetch="select">
+        <many-to-one lazy="false" name="region" class="ren.oliver.bos.domain.Region" fetch="select">
             <column name="region_id" length="32" />
         </many-to-one>
 
