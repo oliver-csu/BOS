@@ -1,5 +1,7 @@
 package ren.oliver.bos.dao;
 
+import org.hibernate.criterion.DetachedCriteria;
+import ren.oliver.bos.domain.Staff;
 import ren.oliver.bos.utils.PageBean;
 
 import java.io.Serializable;
@@ -18,6 +20,8 @@ public interface BaseDao<T> {
 	T findById(Serializable id);
 	
 	List<T> findAll();
+
+	List<T> findByCriteria(DetachedCriteria detachedCriteria);
 
 	void executeUpdate(String queryName,Object...objects);
 

@@ -1,6 +1,8 @@
 package ren.oliver.bos.service.impl;
 
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -8,6 +10,8 @@ import ren.oliver.bos.dao.StaffDao;
 import ren.oliver.bos.domain.Staff;
 import ren.oliver.bos.service.StaffService;
 import ren.oliver.bos.utils.PageBean;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -48,5 +52,13 @@ public class StaffServiceImpl implements StaffService {
         staff.setStandard(model.getStandard());
         staff.setStation(model.getStation());
         staffDao.update(staff);
+    }
+
+    @Override
+    public List<Staff> findListNotDelete() {
+
+        DetachedCriteria detachedCriteria = DetachedCriteria.forClass(Staff.class);
+        detachedCriteria.add(Restrictions.eq("deltag", "0"));
+        return staffDao.findByCriteria(detachedCriteria);
     }
 }

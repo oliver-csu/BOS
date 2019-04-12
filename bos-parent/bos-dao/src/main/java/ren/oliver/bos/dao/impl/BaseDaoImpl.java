@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import ren.oliver.bos.dao.BaseDao;
+import ren.oliver.bos.domain.Staff;
 import ren.oliver.bos.utils.PageBean;
 
 public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
@@ -64,6 +65,12 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
 		String hql = "from " + entityClass.getSimpleName();
 		return (List<T>) this.getHibernateTemplate().find(hql);
 	}
+
+    @Override
+    public List<T> findByCriteria(DetachedCriteria detachedCriteria) {
+
+        return (List<T>) this.getHibernateTemplate().findByCriteria(detachedCriteria);
+    }
 
 	public void executeUpdate(String queryName, Object... objects) {
 		Session session = this.getSessionFactory().getCurrentSession();

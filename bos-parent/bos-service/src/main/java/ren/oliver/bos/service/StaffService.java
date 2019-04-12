@@ -3,6 +3,8 @@ package ren.oliver.bos.service;
 import ren.oliver.bos.domain.Staff;
 import ren.oliver.bos.utils.PageBean;
 
+import java.util.List;
+
 public interface StaffService {
 
     void save(Staff staff);
@@ -12,4 +14,6 @@ public interface StaffService {
     void deleteBatch(String ids);
 
     void update(Staff model);
+
+    List<Staff> findListNotDelete();
 }

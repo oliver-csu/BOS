@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import ren.oliver.bos.domain.Staff;
 import ren.oliver.bos.service.StaffService;
 
+import java.util.List;
+
 @Controller
 @Scope("prototype")
 public class StaffAction extends BaseAction<Staff> {
@@ -37,6 +39,13 @@ public class StaffAction extends BaseAction<Staff> {
 
         staffService.deleteBatch(ids);
         return LIST;
+    }
+
+    public String listajax(){
+
+        List<Staff> list = staffService.findListNotDelete();
+        this.java2Json(list, new String[]{"decidedZones"});
+        return NONE;
     }
 
     public String getIds() {

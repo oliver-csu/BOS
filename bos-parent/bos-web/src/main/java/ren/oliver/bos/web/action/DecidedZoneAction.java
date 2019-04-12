@@ -10,6 +10,8 @@ import ren.oliver.bos.service.DecidedZoneService;
 @Scope("prototype")
 public class DecidedZoneAction extends BaseAction<DecidedZone> {
 
+    private String[] subareaid;
+
     @Autowired
     DecidedZoneService decidedZoneService;
 
@@ -18,5 +20,16 @@ public class DecidedZoneAction extends BaseAction<DecidedZone> {
         decidedZoneService.pageQuery(pageBean);
         java2Json(pageBean, new String[]{"currentPage", "pageSize", "detachedCriteria", "subAreas", "decidedZones"});
         return NONE;
+    }
+
+    public String add(){
+
+        decidedZoneService.save(model, subareaid);
+        return LIST;
+    }
+
+    public void setSubareaid(String[] subareaid) {
+
+        this.subareaid = subareaid;
     }
 }

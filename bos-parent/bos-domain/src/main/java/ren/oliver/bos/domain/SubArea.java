@@ -36,6 +36,11 @@ public class SubArea implements Serializable {
         this.position = position;
     }
 
+    public String getSubareaid(){
+
+        return id;
+    }
+
     public String getId() {
 
         return this.id;
@@ -46,12 +51,12 @@ public class SubArea implements Serializable {
         this.id = id;
     }
 
-    public DecidedZone getDecidedzone() {
+    public DecidedZone getDecidedZone() {
 
         return this.decidedZone;
     }
 
-    public void setDecidedzone(DecidedZone decidedZone) {
+    public void setDecidedZone(DecidedZone decidedZone) {
 
         this.decidedZone = decidedZone;
     }

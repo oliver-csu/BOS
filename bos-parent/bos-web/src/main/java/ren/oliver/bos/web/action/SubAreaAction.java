@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import ren.oliver.bos.domain.SubArea;
 import ren.oliver.bos.service.SubAreaService;
 
+import java.util.List;
+
 @Controller
 @Scope("prototype")
 public class SubAreaAction extends BaseAction<SubArea> {
@@ -17,5 +19,12 @@ public class SubAreaAction extends BaseAction<SubArea> {
 
         subAreaService.save(model);
         return LIST;
+    }
+
+    public String listajax() {
+
+        List<SubArea> list = subAreaService.findListNotAssociation();
+        this.java2Json(list, new String[]{"decidedzone","region"});
+        return NONE;
     }
 }

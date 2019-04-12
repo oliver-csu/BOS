@@ -286,7 +286,7 @@
 
 	<div style="overflow:auto;padding:5px;" border="false">
 		<form id="addDecidedzoneForm" method="post"
-			  action="decidedzoneAction_add.action">
+			  action="decidedZoneAction_add.action">
 			<table class="table-edit" width="80%" align="center">
 				<tr class="title">
 					<td colspan="2">定区信息</td>
@@ -311,7 +311,7 @@
 					<td valign="top">关联分区</td>
 					<td>
 						<table id="subareaGrid"  class="easyui-datagrid" border="false" style="width:300px;height:300px"
-							   data-options="url:'subareaAction_listajax.action',fitColumns:true,singleSelect:false">
+							   data-options="url:'subAreaAction_listajax.action',fitColumns:true,singleSelect:false">
 							<thead>
 							<tr>
 								<th data-options="field:'subareaid',width:30,checkbox:true">编号</th>

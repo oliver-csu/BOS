@@ -47,7 +47,7 @@
         </action>
 
         <action name="decidedZoneAction_*" class="decidedZoneAction" method="{1}">
-
+            <result name="list">/WEB-INF/pages/base/decidedzone.jsp</result>
         </action>
 	</package>
 </struts>

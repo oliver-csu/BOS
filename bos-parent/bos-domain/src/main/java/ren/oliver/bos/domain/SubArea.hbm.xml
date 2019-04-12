@@ -8,7 +8,7 @@
             <generator class="uuid" />
         </id>
 
-        <many-to-one name="decidedzone" class="ren.oliver.bos.domain.DecidedZone" fetch="select">
+        <many-to-one name="decidedZone" class="ren.oliver.bos.domain.DecidedZone" fetch="select">
             <column name="decidedzone_id" length="32" />
         </many-to-one>
 
