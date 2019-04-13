@@ -21,6 +21,13 @@ public class SubAreaAction extends BaseAction<SubArea> {
         return LIST;
     }
 
+    public String pageQuery() {
+
+        subAreaService.pageQuery(pageBean);
+        java2Json(pageBean, new String[]{"currentPage","detachedCriteria","pageSize","decidedZone","subAreas"});
+        return NONE;
+    }
+
     public String listajax() {
 
         List<SubArea> list = subAreaService.findListNotAssociation();

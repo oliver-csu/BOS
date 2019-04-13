@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ren.oliver.bos.dao.SubAreaDao;
 import ren.oliver.bos.domain.SubArea;
 import ren.oliver.bos.service.SubAreaService;
+import ren.oliver.bos.utils.PageBean;
 
 import java.util.List;
 
@@ -30,5 +31,11 @@ public class SubAreaServiceImpl implements SubAreaService {
         DetachedCriteria detachedCriteria = DetachedCriteria.forClass(SubArea.class);
         detachedCriteria.add(Restrictions.isNull("decidedZone"));
         return subAreaDao.findByCriteria(detachedCriteria);
+    }
+
+    @Override
+    public void pageQuery(PageBean pageBean) {
+
+        subAreaDao.pageQuery(pageBean);
     }
 }
