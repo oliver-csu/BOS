@@ -38,4 +38,10 @@ public class SubAreaServiceImpl implements SubAreaService {
 
         subAreaDao.pageQuery(pageBean);
     }
+
+    @Override
+    public List<SubArea> findAll() {
+
+        return subAreaDao.findAll();
+    }
 }

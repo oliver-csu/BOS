@@ -116,4 +116,9 @@ public class Region implements Serializable {
 
         this.subAreas = subAreas;
     }
+
+    public String getName() {
+
+        return province + " " + city + " " + district;
+    }
 }
