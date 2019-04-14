@@ -23,6 +23,8 @@ import java.util.List;
 @Scope("prototype")
 public class SubAreaAction extends BaseAction<SubArea> {
 
+    private String decidedzoneId;
+
     @Autowired
     SubAreaService subAreaService;
 
@@ -102,5 +104,22 @@ public class SubAreaAction extends BaseAction<SubArea> {
         List<SubArea> list = subAreaService.findListNotAssociation();
         this.java2Json(list, new String[]{"decidedzone","region"});
         return NONE;
+    }
+
+    public String findListByDecidedzoneId() {
+
+        List<SubArea> list = subAreaService.findListByDecidedzoneId(decidedzoneId);
+        java2Json(list, new String[]{"decidedZone","subAreas"});
+        return NONE;
+    }
+
+    public String getDecidedzoneId() {
+
+        return decidedzoneId;
+    }
+
+    public void setDecidedzoneId(String decidedzoneId) {
+
+        this.decidedzoneId = decidedzoneId;
     }
 }

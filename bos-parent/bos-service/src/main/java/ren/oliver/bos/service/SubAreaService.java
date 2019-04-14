@@ -14,4 +14,6 @@ public interface SubAreaService {
     void pageQuery(PageBean pageBean);
 
     List<SubArea> findAll();
+
+    List<SubArea> findListByDecidedzoneId(String decidedZoneId);
 }
