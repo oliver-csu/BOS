@@ -25,7 +25,7 @@ public class StaffAction extends BaseAction<Staff> {
     public String pageQuery() {
 
         staffService.pageQuery(pageBean);
-        java2Json(pageBean, new String[]{"currentPage","detachedCriteria","pageSize"});
+        java2Json(pageBean, new String[]{"currentPage","detachedCriteria","pageSize","decidedZones"});
         return NONE;
     }
 
