@@ -227,7 +227,7 @@ public class NoticeBill implements Serializable {
         return this.workBills;
     }
 
-    public void setWorkbills(Set workBills) {
+    public void setWorkBills(Set workBills) {
 
         this.workBills = workBills;
     }
