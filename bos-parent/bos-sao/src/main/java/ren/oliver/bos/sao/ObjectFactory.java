@@ -24,14 +24,18 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _FindListHasAssociation_QNAME = new QName("http://service.crm.oliver.ren/", "findListHasAssociation");
-    private final static QName _FindListHasAssociationResponse_QNAME = new QName("http://service.crm.oliver.ren/", "findListHasAssociationResponse");
-    private final static QName _AssignCustomersToDecidedZone_QNAME = new QName("http://service.crm.oliver.ren/", "assignCustomersToDecidedZone");
-    private final static QName _AssignCustomersToDecidedZoneResponse_QNAME = new QName("http://service.crm.oliver.ren/", "assignCustomersToDecidedZoneResponse");
-    private final static QName _FindAll_QNAME = new QName("http://service.crm.oliver.ren/", "findAll");
-    private final static QName _FindAllResponse_QNAME = new QName("http://service.crm.oliver.ren/", "findAllResponse");
+    private final static QName _FindCustomerByTelephone_QNAME = new QName("http://service.crm.oliver.ren/", "findCustomerByTelephone");
+    private final static QName _FindCustomerByTelephoneResponse_QNAME = new QName("http://service.crm.oliver.ren/", "findCustomerByTelephoneResponse");
     private final static QName _FindListNotAssociation_QNAME = new QName("http://service.crm.oliver.ren/", "findListNotAssociation");
     private final static QName _FindListNotAssociationResponse_QNAME = new QName("http://service.crm.oliver.ren/", "findListNotAssociationResponse");
+    private final static QName _FindListHasAssociation_QNAME = new QName("http://service.crm.oliver.ren/", "findListHasAssociation");
+    private final static QName _FindListHasAssociationResponse_QNAME = new QName("http://service.crm.oliver.ren/", "findListHasAssociationResponse");
+    private final static QName _FindDecidedZoneIdByAddress_QNAME = new QName("http://service.crm.oliver.ren/", "findDecidedZoneIdByAddress");
+    private final static QName _FindDecidedZoneIdByAddressResponse_QNAME = new QName("http://service.crm.oliver.ren/", "findDecidedZoneIdByAddressResponse");
+    private final static QName _FindAll_QNAME = new QName("http://service.crm.oliver.ren/", "findAll");
+    private final static QName _FindAllResponse_QNAME = new QName("http://service.crm.oliver.ren/", "findAllResponse");
+    private final static QName _AssignCustomersToDecidedZone_QNAME = new QName("http://service.crm.oliver.ren/", "assignCustomersToDecidedZone");
+    private final static QName _AssignCustomersToDecidedZoneResponse_QNAME = new QName("http://service.crm.oliver.ren/", "assignCustomersToDecidedZoneResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: ren.oliver.bos.sao
@@ -41,51 +45,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FindListHasAssociation }
+     * Create an instance of {@link FindCustomerByTelephone }
      * 
      */
-    public FindListHasAssociation createFindListHasAssociation() {
-        return new FindListHasAssociation();
+    public FindCustomerByTelephone createFindCustomerByTelephone() {
+        return new FindCustomerByTelephone();
     }
 
     /**
-     * Create an instance of {@link FindListHasAssociationResponse }
+     * Create an instance of {@link FindCustomerByTelephoneResponse }
      * 
      */
-    public FindListHasAssociationResponse createFindListHasAssociationResponse() {
-        return new FindListHasAssociationResponse();
-    }
-
-    /**
-     * Create an instance of {@link AssignCustomersToDecidedZone }
-     * 
-     */
-    public AssignCustomersToDecidedZone createAssignCustomersToDecidedZone() {
-        return new AssignCustomersToDecidedZone();
-    }
-
-    /**
-     * Create an instance of {@link AssignCustomersToDecidedZoneResponse }
-     * 
-     */
-    public AssignCustomersToDecidedZoneResponse createAssignCustomersToDecidedZoneResponse() {
-        return new AssignCustomersToDecidedZoneResponse();
-    }
-
-    /**
-     * Create an instance of {@link FindAll }
-     * 
-     */
-    public FindAll createFindAll() {
-        return new FindAll();
-    }
-
-    /**
-     * Create an instance of {@link FindAllResponse }
-     * 
-     */
-    public FindAllResponse createFindAllResponse() {
-        return new FindAllResponse();
+    public FindCustomerByTelephoneResponse createFindCustomerByTelephoneResponse() {
+        return new FindCustomerByTelephoneResponse();
     }
 
     /**
@@ -105,11 +77,127 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link FindListHasAssociation }
+     * 
+     */
+    public FindListHasAssociation createFindListHasAssociation() {
+        return new FindListHasAssociation();
+    }
+
+    /**
+     * Create an instance of {@link FindListHasAssociationResponse }
+     * 
+     */
+    public FindListHasAssociationResponse createFindListHasAssociationResponse() {
+        return new FindListHasAssociationResponse();
+    }
+
+    /**
+     * Create an instance of {@link FindDecidedZoneIdByAddress }
+     * 
+     */
+    public FindDecidedZoneIdByAddress createFindDecidedZoneIdByAddress() {
+        return new FindDecidedZoneIdByAddress();
+    }
+
+    /**
+     * Create an instance of {@link FindDecidedZoneIdByAddressResponse }
+     * 
+     */
+    public FindDecidedZoneIdByAddressResponse createFindDecidedZoneIdByAddressResponse() {
+        return new FindDecidedZoneIdByAddressResponse();
+    }
+
+    /**
+     * Create an instance of {@link FindAll }
+     * 
+     */
+    public FindAll createFindAll() {
+        return new FindAll();
+    }
+
+    /**
+     * Create an instance of {@link FindAllResponse }
+     * 
+     */
+    public FindAllResponse createFindAllResponse() {
+        return new FindAllResponse();
+    }
+
+    /**
+     * Create an instance of {@link AssignCustomersToDecidedZone }
+     * 
+     */
+    public AssignCustomersToDecidedZone createAssignCustomersToDecidedZone() {
+        return new AssignCustomersToDecidedZone();
+    }
+
+    /**
+     * Create an instance of {@link AssignCustomersToDecidedZoneResponse }
+     * 
+     */
+    public AssignCustomersToDecidedZoneResponse createAssignCustomersToDecidedZoneResponse() {
+        return new AssignCustomersToDecidedZoneResponse();
+    }
+
+    /**
      * Create an instance of {@link Customer }
      * 
      */
     public Customer createCustomer() {
         return new Customer();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindCustomerByTelephone }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link FindCustomerByTelephone }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "findCustomerByTelephone")
+    public JAXBElement<FindCustomerByTelephone> createFindCustomerByTelephone(FindCustomerByTelephone value) {
+        return new JAXBElement<FindCustomerByTelephone>(_FindCustomerByTelephone_QNAME, FindCustomerByTelephone.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindCustomerByTelephoneResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link FindCustomerByTelephoneResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "findCustomerByTelephoneResponse")
+    public JAXBElement<FindCustomerByTelephoneResponse> createFindCustomerByTelephoneResponse(FindCustomerByTelephoneResponse value) {
+        return new JAXBElement<FindCustomerByTelephoneResponse>(_FindCustomerByTelephoneResponse_QNAME, FindCustomerByTelephoneResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindListNotAssociation }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link FindListNotAssociation }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "findListNotAssociation")
+    public JAXBElement<FindListNotAssociation> createFindListNotAssociation(FindListNotAssociation value) {
+        return new JAXBElement<FindListNotAssociation>(_FindListNotAssociation_QNAME, FindListNotAssociation.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindListNotAssociationResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link FindListNotAssociationResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "findListNotAssociationResponse")
+    public JAXBElement<FindListNotAssociationResponse> createFindListNotAssociationResponse(FindListNotAssociationResponse value) {
+        return new JAXBElement<FindListNotAssociationResponse>(_FindListNotAssociationResponse_QNAME, FindListNotAssociationResponse.class, null, value);
     }
 
     /**
@@ -139,29 +227,29 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AssignCustomersToDecidedZone }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindDecidedZoneIdByAddress }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link AssignCustomersToDecidedZone }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link FindDecidedZoneIdByAddress }{@code >}
      */
-    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "assignCustomersToDecidedZone")
-    public JAXBElement<AssignCustomersToDecidedZone> createAssignCustomersToDecidedZone(AssignCustomersToDecidedZone value) {
-        return new JAXBElement<AssignCustomersToDecidedZone>(_AssignCustomersToDecidedZone_QNAME, AssignCustomersToDecidedZone.class, null, value);
+    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "findDecidedZoneIdByAddress")
+    public JAXBElement<FindDecidedZoneIdByAddress> createFindDecidedZoneIdByAddress(FindDecidedZoneIdByAddress value) {
+        return new JAXBElement<FindDecidedZoneIdByAddress>(_FindDecidedZoneIdByAddress_QNAME, FindDecidedZoneIdByAddress.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AssignCustomersToDecidedZoneResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindDecidedZoneIdByAddressResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link AssignCustomersToDecidedZoneResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link FindDecidedZoneIdByAddressResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "assignCustomersToDecidedZoneResponse")
-    public JAXBElement<AssignCustomersToDecidedZoneResponse> createAssignCustomersToDecidedZoneResponse(AssignCustomersToDecidedZoneResponse value) {
-        return new JAXBElement<AssignCustomersToDecidedZoneResponse>(_AssignCustomersToDecidedZoneResponse_QNAME, AssignCustomersToDecidedZoneResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "findDecidedZoneIdByAddressResponse")
+    public JAXBElement<FindDecidedZoneIdByAddressResponse> createFindDecidedZoneIdByAddressResponse(FindDecidedZoneIdByAddressResponse value) {
+        return new JAXBElement<FindDecidedZoneIdByAddressResponse>(_FindDecidedZoneIdByAddressResponse_QNAME, FindDecidedZoneIdByAddressResponse.class, null, value);
     }
 
     /**
@@ -191,29 +279,29 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FindListNotAssociation }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AssignCustomersToDecidedZone }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link FindListNotAssociation }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link AssignCustomersToDecidedZone }{@code >}
      */
-    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "findListNotAssociation")
-    public JAXBElement<FindListNotAssociation> createFindListNotAssociation(FindListNotAssociation value) {
-        return new JAXBElement<FindListNotAssociation>(_FindListNotAssociation_QNAME, FindListNotAssociation.class, null, value);
+    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "assignCustomersToDecidedZone")
+    public JAXBElement<AssignCustomersToDecidedZone> createAssignCustomersToDecidedZone(AssignCustomersToDecidedZone value) {
+        return new JAXBElement<AssignCustomersToDecidedZone>(_AssignCustomersToDecidedZone_QNAME, AssignCustomersToDecidedZone.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FindListNotAssociationResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link AssignCustomersToDecidedZoneResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link FindListNotAssociationResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link AssignCustomersToDecidedZoneResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "findListNotAssociationResponse")
-    public JAXBElement<FindListNotAssociationResponse> createFindListNotAssociationResponse(FindListNotAssociationResponse value) {
-        return new JAXBElement<FindListNotAssociationResponse>(_FindListNotAssociationResponse_QNAME, FindListNotAssociationResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://service.crm.oliver.ren/", name = "assignCustomersToDecidedZoneResponse")
+    public JAXBElement<AssignCustomersToDecidedZoneResponse> createAssignCustomersToDecidedZoneResponse(AssignCustomersToDecidedZoneResponse value) {
+        return new JAXBElement<AssignCustomersToDecidedZoneResponse>(_AssignCustomersToDecidedZoneResponse_QNAME, AssignCustomersToDecidedZoneResponse.class, null, value);
     }
 
 }
