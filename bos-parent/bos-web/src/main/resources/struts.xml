@@ -53,5 +53,9 @@
         <action name="noticeBillAction_*" class="noticeBillAction" method="{1}">
             <result name="add">/WEB-INF/pages/qupai/noticebill_add.jsp</result>
         </action>
+
+        <action name="workOrderManageAction_*" class="workOrderManageAction" method="{1}">
+
+        </action>
 	</package>
 </struts>
