@@ -82,10 +82,9 @@
 
     <!-- 注册安全管理器对象 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-        <!--<property name="realm" ref="bosRealm"/>-->
+        <property name="realm" ref="bosRealm"/>
     </bean>
 
     <!-- 注册realm -->
-    <!--<bean id="bosRealm" class="ren.oliver.bos.realm.BOSRealm" />-->
-
+    <bean id="bosRealm" class="ren.oliver.bos.realm.BOSRealm" />
 </beans>
