@@ -1,6 +1,8 @@
 package ren.oliver.bos.web.action;
 
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -39,6 +41,8 @@ public class StaffAction extends BaseAction<Staff> {
 
     public String deleteBatch(){
 
+        Subject subject = SecurityUtils.getSubject();
+        subject.checkPermission("staff-delete");
         staffService.deleteBatch(ids);
         return LIST;
     }
