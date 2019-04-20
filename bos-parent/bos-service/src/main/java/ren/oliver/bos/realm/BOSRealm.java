@@ -2,6 +2,7 @@ package ren.oliver.bos.realm;
 
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,9 @@ public class BOSRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
 
-        return null;
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        // 为用户授权
+        info.addStringPermission("staff-list");
+        return info;
     }
 }
