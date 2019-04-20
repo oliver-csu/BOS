@@ -1,5 +1,6 @@
 package ren.oliver.bos.web.action;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,7 @@ public class StaffAction extends BaseAction<Staff> {
         return NONE;
     }
 
+    @RequiresPermissions("staff-edit")
     public String edit() {
 
         staffService.update(model);
