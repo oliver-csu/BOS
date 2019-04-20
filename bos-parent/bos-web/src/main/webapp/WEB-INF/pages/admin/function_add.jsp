@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Insert title here</title>
+	<title>function_add</title>
 	<!-- 导入jquery核心类库 -->
 	<script type="text/javascript"
 			src="${pageContext.request.contextPath }/js/jquery-1.8.3.js"></script>
@@ -68,7 +68,7 @@
 			<tr>
 				<td>是否生成菜单</td>
 				<td>
-					<select name="generatemenu" class="easyui-combobox">
+					<select name="generateMenu" class="easyui-combobox">
 						<option value="0">不生成</option>
 						<option value="1">生成</option>
 					</select>
