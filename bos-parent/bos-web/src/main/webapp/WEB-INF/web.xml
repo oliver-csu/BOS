@@ -14,7 +14,7 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
-	<filter>
+    <filter>
 		<filter-name>openSessionInView</filter-name>
 		<filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
 	</filter>
@@ -31,6 +31,15 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+
+    <filter>
+        <filter-name>shiro</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>shiro</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 	<filter>
 		<filter-name>struts2</filter-name>
