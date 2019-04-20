@@ -8,6 +8,9 @@ import ren.oliver.bos.dao.RoleDao;
 import ren.oliver.bos.domain.Function;
 import ren.oliver.bos.domain.Role;
 import ren.oliver.bos.service.RoleService;
+import ren.oliver.bos.utils.PageBean;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -34,6 +37,18 @@ public class RoleServiceImpl implements RoleService {
                 model.getFunctions().add(function);
             }
         }
+    }
+
+    @Override
+    public void pageQuery(PageBean pageBean) {
+
+        roleDao.pageQuery(pageBean);
+    }
+
+    @Override
+    public List<Role> findAll() {
+
+        return roleDao.findAll();
     }
 
 
