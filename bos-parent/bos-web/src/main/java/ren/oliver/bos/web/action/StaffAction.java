@@ -41,8 +41,10 @@ public class StaffAction extends BaseAction<Staff> {
 
     public String deleteBatch(){
 
+        // 使用业务代码进行权限拦截
         Subject subject = SecurityUtils.getSubject();
         subject.checkPermission("staff-delete");
+
         staffService.deleteBatch(ids);
         return LIST;
     }
