@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>function_add</title>
+	<title>Insert title here</title>
 	<!-- 导入jquery核心类库 -->
 	<script type="text/javascript"
 			src="${pageContext.request.contextPath }/js/jquery-1.8.3.js"></script>
@@ -68,7 +68,7 @@
 			<tr>
 				<td>是否生成菜单</td>
 				<td>
-					<select name="generateMenu" class="easyui-combobox">
+					<select name="generatemenu" class="easyui-combobox">
 						<option value="0">不生成</option>
 						<option value="1">生成</option>
 					</select>
@@ -83,9 +83,14 @@
 			<tr>
 				<td>父功能点</td>
 				<td>
-					<input name="parentFunction.id" class="easyui-combobox"
-						   data-options="valueField:'id',textField:'name',
-								url:'functionAction_listajax.action'"/>
+					<!--
+                    <input name="parentFunction.id" class="easyui-combobox"
+                        data-options="valueField:'id',textField:'name',
+                        url:'functionAction_listajax.action'"/>
+                     -->
+					<input class="easyui-combotree" name="parentFunction.id"
+						   data-options="url:'functionAction_listajax.action'"
+						   style="width:170px;">
 				</td>
 			</tr>
 			<tr>

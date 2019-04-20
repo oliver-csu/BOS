@@ -20,7 +20,7 @@ public class FunctionAction extends BaseAction<Function> {
      */
     public String listajax(){
         List<Function> list = functionService.findAll();
-        this.java2Json(list, new String[]{"parentFunction","roles","children"});
+        this.java2Json(list, new String[]{"parentFunction","roles"});
         return NONE;
     }
 
@@ -42,7 +42,7 @@ public class FunctionAction extends BaseAction<Function> {
         String page = model.getPage();
         pageBean.setCurrentPage(Integer.parseInt(page));
         functionService.pageQuery(pageBean);
-        this.java2Json(pageBean, new String[]{"parentFunction","roles","children"});
+        this.java2Json(pageBean, new String[]{"detachedCriteria", "parentFunction","roles","children"});
         return NONE;
     }
 
