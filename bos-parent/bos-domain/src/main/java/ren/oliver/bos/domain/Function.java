@@ -140,4 +140,13 @@ public class Function implements Serializable {
         this.children = children;
     }
 
+    public String getpId(){
+
+        if(parentFunction == null){
+            return "0";
+        } else {
+            return parentFunction.getId();
+        }
+    }
+
 }
