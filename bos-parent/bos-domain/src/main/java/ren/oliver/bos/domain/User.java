@@ -1,5 +1,6 @@
 package ren.oliver.bos.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -16,8 +17,8 @@ public class User implements Serializable {
 	private String station;
 	private String telephone;
 	private String remark;
-	private Set noticeBills = new HashSet(0);
-	private Set roles = new HashSet(0);
+	private Set<NoticeBill> noticeBills = new HashSet(0);
+	private Set<Role> roles = new HashSet(0);
 
 	public User() {
 
@@ -153,5 +154,25 @@ public class User implements Serializable {
 	public void setRoles(Set roles) {
 
 		this.roles = roles;
+	}
+
+	public String getRoleNames(){
+
+		String roleNames = "";
+		for(Role role : roles){
+			String name = role.getName();
+			roleNames += name + " ";
+		}
+		return roleNames;
+	}
+
+	public String getBirthdayString(){
+
+		if (birthday != null) {
+			String format = new SimpleDateFormat("yyyy-MM-dd").format(birthday);
+			return format;
+		} else {
+			return "暂无数据";
+		}
 	}
 }

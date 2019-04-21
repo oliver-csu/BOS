@@ -21,15 +21,14 @@ import java.io.IOException;
 @Scope("prototype")
 public class UserAction extends BaseAction<User> {
 
+    // 验证码
     private String checkcode;
+
+    // 多个角色id
+    private String[] roleIds;
 
     @Autowired
     UserService userService;
-
-    public void setCheckcode(String checkcode) {
-
-        this.checkcode = checkcode;
-    }
 
     public String login(){
 
@@ -79,5 +78,44 @@ public class UserAction extends BaseAction<User> {
         ServletActionContext.getResponse().setContentType("text/html;charset=utf-8");
         ServletActionContext.getResponse().getWriter().write(result);
         return NONE;
+    }
+
+    /**
+     * 添加用户
+     */
+    public String add(){
+
+        userService.save(model, roleIds);
+        return LIST;
+    }
+
+    /**
+     * 用户数据分页查询
+     */
+    public String pageQuery(){
+
+        userService.pageQuery(pageBean);
+        this.java2Json(pageBean, new String[]{"detachedCriteria","noticeBills","roles"});
+        return NONE;
+    }
+
+    public void setCheckcode(String checkcode) {
+
+        this.checkcode = checkcode;
+    }
+
+    public String getCheckcode() {
+
+        return this.checkcode;
+    }
+
+    public void setRoleIds(String[] roleIds) {
+
+        this.roleIds = roleIds;
+    }
+
+    public String[] getRoleIds() {
+
+        return this.roleIds;
     }
 }

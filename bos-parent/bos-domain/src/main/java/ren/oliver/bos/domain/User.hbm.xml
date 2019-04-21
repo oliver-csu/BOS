@@ -40,13 +40,11 @@
             <column name="remark" />
         </property>
 
-        <set name="noticeBills" table="user_role" >
+        <set name="noticeBills" inverse="true">
             <key>
-                <column name="user_id" length="32" not-null="true" />
+                <column name="user_id" length="32" />
             </key>
-            <many-to-many class="ren.oliver.bos.domain.NoticeBill">
-                <column name="id" length="32" not-null="true" />
-            </many-to-many>
+            <one-to-many class="ren.oliver.bos.domain.NoticeBill" />
         </set>
 
         <set name="roles" table="user_role" >

@@ -1,4 +1,4 @@
-INSERT INTO `t_user` VALUES ('1', 'oliver', '81dc9bdb52d04dc20036dbd8313ed055', null, null, null, null, null, null);
+INSERT INTO `t_user` VALUES ('1', 'admin', '81dc9bdb52d04dc20036dbd8313ed055', null, null, null, null, null, null);
 
 INSERT INTO `bc_staff` VALUES ('402840815bf0da5b015bf0db0b370000', '张三', '15705102215', '1', '0', '苏州分部', '10-20公斤');
 INSERT INTO `bc_staff` VALUES ('402840815c01bcaf015c01be0f540000', '李四', '15705102215', '1', '0', '北京分部', '10-20公斤');
