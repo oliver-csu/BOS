@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<!--
+		<constant name="struts.objectFactory" value="spring"/>
+	-->
+	<package name="basicstruts2" extends="struts-default">
+
+        <interceptors>
+            <interceptor name="loginInterceptor" class="ren.oliver.bos.web.interceptor.LoginInterceptor" >
+                <param name="excludeMethods">login</param>
+            </interceptor>
+
+            <interceptor-stack name="bosStack">
+                <interceptor-ref name="loginInterceptor" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="bosStack" />
+
+        <global-results>
+            <result name="login">/login.jsp</result>
+            <result name="unauthorized">/unauthorized.jsp</result>
+        </global-results>
+
+        <!-- 未授权的全局异常 -->
+        <global-exception-mappings>
+            <exception-mapping result="unauthorized" exception="org.apache.shiro.authz.UnauthorizedException" />
+        </global-exception-mappings>
+
+		<action name="page_*_*">
+			<result type="dispatcher">/WEB-INF/pages/{1}/{2}.jsp</result>
+		</action>
+
+        <action name="userAction_*" class="userAction" method="{1}">
+            <result name="home">/index.jsp</result>
+            <result name="list">/WEB-INF/pages/admin/userlist.jsp</result>
+        </action>
+
+        <action name="staffAction_*" class="staffAction" method="{1}">
+            <result name="list">/WEB-INF/pages/base/staff.jsp</result>
+        </action>
+
+        <action name="regionAction_*" class="regionAction" method="{1}">
+
+        </action>
+
+        <action name="subAreaAction_*" class="subAreaAction" method="{1}">
+            <result name="list">/WEB-INF/pages/base/subarea.jsp</result>
+        </action>
+
+        <action name="decidedZoneAction_*" class="decidedZoneAction" method="{1}">
+            <result name="list">/WEB-INF/pages/base/decidedzone.jsp</result>
+        </action>
+
+        <action name="noticeBillAction_*" class="noticeBillAction" method="{1}">
+            <result name="add">/WEB-INF/pages/qupai/noticebill_add.jsp</result>
+        </action>
+
+        <action name="workOrderManageAction_*" class="workOrderManageAction" method="{1}">
+
+        </action>
+
+        <!-- 权限管理 -->
+        <action name="functionAction_*" class="functionAction" method="{1}">
+            <result name="list">/WEB-INF/pages/admin/function.jsp</result>
+        </action>
+
+        <!-- 角色管理 -->
+        <action name="roleAction_*" class="roleAction" method="{1}">
+            <result name="list">/WEB-INF/pages/admin/role.jsp</result>
+        </action>
+	</package>
+</struts>
